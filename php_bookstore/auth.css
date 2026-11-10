@@ -1,0 +1,29 @@
+.auth-page {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    padding: 28px;
+    background: #EAF2F8;
+}
+
+.auth-card {
+    width: min(100%, 460px);
+    padding: 42px;
+    background: #fff;
+    box-shadow: 0 16px 45px rgba(16, 42, 67, .13);
+}
+
+.auth-card .brand { margin-bottom: 42px; }
+.role-tabs { display: grid; grid-template-columns: 1fr 1fr; margin-bottom: 28px; border-bottom: 1px solid #C9D8E4; }
+.role-tabs a { padding: 10px; color: #61788D; text-align: center; text-decoration: none; font-size: 13px; font-weight: 700; }
+.role-tabs .active { color: #102A43; border-bottom: 2px solid #1F6F9D; }
+.auth-card h1 { font-size: 39px; margin-bottom: 26px; }
+.auth-error { padding: 11px 13px; background: #FBE9E7; color: #A33D32; font-size: 13px; }
+.auth-info { padding: 11px 13px; background: #E4F0F8; color: #234D6E; font-size: 13px; }
+.admin-auth-page { background: linear-gradient(135deg, #EAF2F8, #D5E7F4); }
+.auth-form { display: grid; gap: 16px; }
+.auth-form label { display: grid; gap: 7px; font-size: 13px; font-weight: 600; }
+.auth-form input { width: 100%; padding: 12px; border: 1px solid #C9D8E4; font: inherit; outline-color: #3D7EA6; }
+.auth-form .button { border: 0; cursor: pointer; margin-top: 8px; }
+.auth-switch { margin: 23px 0 0; font-size: 13px; color: #61788D; }
+.auth-switch a { color: #1F6F9D; font-weight: 700; }

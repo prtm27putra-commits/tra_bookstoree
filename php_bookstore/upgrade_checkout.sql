@@ -1,0 +1,5 @@
+USE trabooks_db;
+
+ALTER TABLE orders ADD COLUMN buyer_name VARCHAR(120) NOT NULL DEFAULT '' AFTER user_id;
+ALTER TABLE orders ADD COLUMN phone VARCHAR(30) NOT NULL DEFAULT '' AFTER buyer_name;
+ALTER TABLE orders ADD COLUMN address TEXT NOT NULL AFTER phone;

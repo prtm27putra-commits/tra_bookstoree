@@ -1,0 +1,339 @@
+.admin-page { background: #F5F8FC; color: #102A43; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; padding: 16px 8%; background: #fff; border-bottom: 1px solid #D7E2EC; }
+.admin-header > div { display: flex; gap: 18px; align-items: center; }
+.admin-header a { color: #102A43; text-decoration: none; font-size: 13px; font-weight: 700; }
+.admin-header .admin-out { color: #A33D32; }
+.admin-main { max-width: 950px; margin: auto; padding: 55px 25px; }
+.admin-main h1 { font-size: 44px; margin-bottom: 28px; }
+.admin-form-card, .admin-books { padding: 28px; background: #fff; border: 1px solid #D7E2EC; margin-bottom: 28px; }
+.admin-form-card h2, .admin-books h2 { font-size: 25px; margin: 0 0 22px; }
+.book-form { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+.book-form label { display: grid; gap: 7px; font-size: 13px; font-weight: 700; }
+.book-form input, .book-form select { padding: 11px; border: 1px solid #C9D8E4; font: inherit; }
+.book-form .cover-field, .book-form .button { grid-column: 1 / -1; }
+.book-form .button { border: 0; cursor: pointer; }
+.admin-message, .admin-error { padding: 13px 15px; margin: 0 0 18px; font-size: 13px; }
+.admin-message { background: #DCEAF4; color: #234D6E; }.admin-error { background: #FBE9E7; color: #A33D32; }
+.admin-book-list { display: grid; gap: 12px; }.admin-book { display: flex; align-items: center; gap: 15px; padding: 10px 0; border-top: 1px solid #D7E2EC; }.admin-book img { width: 48px; height: 60px; object-fit: cover; }.admin-book div { display: grid; gap: 3px; }.admin-book span { color: #61788D; font-size: 12px; }.admin-book form { margin-left: auto; }.admin-book button { border: 0; background: none; color: #A33D32; border-bottom: 1px solid #A33D32; cursor: pointer; }
+@media (max-width: 600px) { .admin-header { padding: 13px 5%; }.admin-main { padding: 38px 16px; }.admin-main h1 { font-size: 36px; }.admin-form-card, .admin-books { padding: 20px; }.book-form { grid-template-columns: 1fr; }.book-form .cover-field, .book-form .button { grid-column: auto; } }
+
+/* Penyempurnaan visual dashboard admin */
+.admin-page {
+    background: linear-gradient(135deg, #F4F8FC 0%, #E6F0F7 100%);
+}
+
+.admin-header {
+    box-shadow: 0 3px 16px rgba(16, 42, 67, .06);
+}
+
+.admin-main h1 {
+    font-family: 'Playfair Display', serif;
+}
+
+.admin-form-card,
+.admin-books {
+    border: 0;
+    border-radius: 14px;
+    box-shadow: 0 10px 28px rgba(16, 42, 67, .08);
+}
+
+.book-form input:focus,
+.book-form select:focus {
+    outline: none;
+    border-color: #1F6F9D;
+    box-shadow: 0 0 0 3px rgba(31, 111, 157, .13);
+}
+
+.book-form .button {
+    border-radius: 8px;
+    transition: transform .2s, background .2s;
+}
+
+.book-form .button:hover {
+    transform: translateY(-2px);
+    background: #1F6F9D;
+}
+
+.admin-book {
+    padding: 13px 10px;
+    border-radius: 9px;
+    transition: background .2s;
+}
+
+.admin-book:hover {
+    background: #F1F7FB;
+}
+
+.admin-book > a {
+    margin-left: auto;
+    color: #1F6F9D;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+.admin-book > a + form { margin-left: 0; }
+.category-add, .category-list > div, .category-list form { display: flex; align-items: center; gap: 8px; }
+.category-add { margin-bottom: 18px; }
+.category-add input, .category-list input { padding: 10px; border: 1px solid #C9D8E4; border-radius: 7px; font: inherit; }
+.category-add button, .category-list button { border: 0; border-radius: 7px; padding: 10px 13px; background: #1F6F9D; color: #fff; cursor: pointer; font-size: 12px; font-weight: 700; }
+.category-list { display: grid; gap: 9px; }.category-list .danger { background: #A33D32; }
+.data-table { overflow-x: auto; }.data-table table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 13px; }.data-table th, .data-table td { padding: 13px 9px; text-align: left; border-top: 1px solid #D7E2EC; vertical-align: top; }.data-table th { color: #61788D; font-size: 11px; text-transform: uppercase; letter-spacing: .04em; }.data-table tr:hover td { background: #F5FAFE; }.data-table small { display: block; margin-top: 4px; color: #61788D; }
+
+/* TOMBOL BUKTI BAYAR */
+
+.proof-link {
+    display: inline-block;
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: #EAF2FB;
+    color: #2864A5;
+    border: none;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.proof-link:hover {
+    background: #D5E6F7;
+}
+
+/* POPUP */
+
+.proof-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    background: rgba(15, 35, 55, .65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.proof-modal.active {
+    display: flex;
+}
+
+.proof-content {
+    background: #fff;
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 15px 45px rgba(0,0,0,.2);
+}
+
+.proof-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #DCE8F5;
+    padding-bottom: 15px;
+}
+
+.proof-header h2 {
+    margin: 0;
+    color: #285783;
+    font-size: 21px;
+}
+
+.proof-close {
+    border: none;
+    background: #EAF2FB;
+    color: #2864A5;
+    font-size: 27px;
+    width: 35px;
+    height: 35px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.proof-image-container {
+    background: #F1F6FC;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.proof-image-container img {
+    max-width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+}
+
+.proof-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.proof-actions button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.proof-pdf {
+    background: #2864A5;
+    color: white;
+}
+
+.proof-cancel {
+    background: #EAF2FB;
+    color: #285783;
+}
+
+.proof-pdf:hover {
+    background: #194D85;
+}
+
+/* CETAK / SIMPAN PDF */
+
+@media print {
+    body * {
+        visibility: hidden !important;
+    }
+
+    .proof-modal.active,
+    .proof-modal.active * {
+        visibility: visible !important;
+    }
+
+    .proof-modal.active {
+        display: block !important;
+        position: absolute;
+        inset: 0;
+        background: white;
+        padding: 0;
+    }
+
+    .proof-content {
+        width: 100%;
+        max-width: 100%;
+        max-height: none;
+        overflow: visible;
+        box-shadow: none;
+        padding: 10px;
+    }
+
+    .proof-actions,
+    .proof-close {
+        display: none !important;
+    }
+
+    .proof-image-container {
+        background: white;
+    }
+
+    .proof-image-container img {
+        max-width: 100%;
+        max-height: 250mm;
+    }
+
+    @page {
+        size: A4;
+        margin: 15mm;
+    }
+}
+
+@media (max-width: 600px) {
+    .proof-content {
+        padding: 18px;
+    }
+
+    .proof-actions {
+        flex-direction: column;
+    }
+
+    .proof-actions button {
+        width: 100%;
+    }
+}
+
+/* POPUP BUKTI PEMBAYARAN */
+
+.proof-modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(15, 35, 55, 0.65);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.proof-modal.active {
+    display: flex;
+}
+
+.proof-content {
+    background: white;
+    width: 100%;
+    max-width: 650px;
+    max-height: 90vh;
+    overflow-y: auto;
+    border-radius: 15px;
+    padding: 25px;
+}
+
+.proof-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.proof-close {
+    border: none;
+    background: #EAF2FB;
+    color: #2864A5;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+.proof-image-container {
+    background: #F1F6FC;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.proof-image-container img {
+    max-width: 100%;
+    max-height: 55vh;
+    object-fit: contain;
+}
+
+.proof-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.proof-actions button {
+    padding: 11px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.proof-pdf {
+    background: #2864A5;
+    color: white;
+}
+
+.proof-cancel {
+    background: #EAF2FB;
+    color: #285783;
+}

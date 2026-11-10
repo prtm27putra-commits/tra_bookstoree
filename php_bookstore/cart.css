@@ -1,0 +1,63 @@
+.section-copy{margin:0;
+color:#61788D;
+font-size:14px}
+.alt{background:#EAF2F8}
+.notice{max-width:86%;
+margin:26px auto -30px;
+padding:14px 18px;
+background:#DCEAF4;
+color:#234D6E;
+font-size:14px}
+.book-info form{margin-top:14px}
+.add-button,.remove-button{font:600 12px 'DM Sans';
+cursor:pointer}
+.add-button{width:100%;
+padding:11px;
+border:1px solid var(--ink);
+background:transparent;
+color:var(--ink)}
+.add-button:hover{background:var(--ink);
+color:#fff}
+.cart-section{padding:90px 13%;
+background:#F8FBFE}
+.cart-section h2{font-size:42px}
+.empty{margin:24px 0 0;
+color:#61788D}
+.cart-list{margin-top:30px;
+border-top:1px solid #D2E0EA}
+.cart-item{display:flex;
+align-items:center;
+gap:18px;
+padding:15px 0;
+border-bottom:1px solid #D2E0EA}
+.cart-item img{width:54px;
+height:70px;
+object-fit:cover}
+.cart-item h3{font:600 18px 'Playfair Display';
+margin:0 0 5px}
+.cart-item p{margin:0;
+color:#61788D;
+font-size:13px}
+.cart-item form{margin-left:auto}
+.remove-button{border:0;
+border-bottom:1px solid var(--ink);
+background:none;
+padding:4px 0}
+.cart-total{margin-top:25px;
+display:grid;
+grid-template-columns:1fr auto;
+align-items:center;
+gap:16px}
+.cart-total b{font-size:14px}
+.cart-total strong{font:600 26px 'Playfair Display'}
+.cart-total form{grid-column:1/-1}
+.cart-total .button{border:0;
+cursor:pointer;
+width:100%;
+font-family:'DM Sans'}
+@media(max-width:760px){.section-copy{display:none}
+.cart-section{padding:65px 8%}
+.cart-section h2{font-size:34px}
+.cart-item h3{font-size:16px}
+}
+

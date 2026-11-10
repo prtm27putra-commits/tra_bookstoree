@@ -1,0 +1,27 @@
+.about-values {
+    display: grid;
+    gap: 20px;
+    align-content: center;
+}
+
+.about-values > div {
+    border-top: 1px solid #9FC1D8;
+    padding-top: 16px;
+    display: grid;
+    gap: 7px;
+}
+
+.about-values b {
+    font-family: 'Playfair Display', serif;
+    font-size: 21px;
+}
+
+.about-values span {
+    color: #EAF4FA;
+    font-size: 14px;
+    line-height: 1.55;
+}
+
+.about-values blockquote {
+    margin-top: 8px;
+}

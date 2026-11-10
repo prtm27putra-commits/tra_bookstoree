@@ -1,0 +1,504 @@
+.search-form {
+    display: flex;
+    align-items: center;
+    border: 1px solid #C9D8E4;
+    background: #fff;
+}
+.search-form input {
+    width: 175px;
+    border: 0;
+    padding: 8px 10px;
+    font: 12px 'DM Sans';
+    outline: 0;
+}
+.search-form button {
+    border: 0;
+    padding: 8px 10px;
+    background: #1F6F9D;
+    color: #fff;
+    font: 600 11px 'DM Sans';
+    cursor: pointer;
+}
+.search-result {
+    margin: 28px 7% -60px;
+    color: #61788D;
+    font-size: 14px;
+}
+.payment-info {
+    margin: 0 0 12px;
+    color: #234D6E;
+    font-size: 13px;
+}
+.checkout-form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 22px 0;
+    padding: 20px;
+    background: #EAF2F8;
+}
+.checkout-form h3, .checkout-error {
+    grid-column: 1 / -1;
+    margin: 0;
+}
+.checkout-form h3 {
+    font: 600 21px 'Playfair Display';
+}
+.checkout-form label {
+    display: grid;
+    gap: 7px;
+    color: #234D6E;
+    font-size: 12px;
+    font-weight: 700;
+}
+.checkout-form input, .checkout-form textarea, .checkout-form select {
+    width: 100%;
+    border: 1px solid #C9D8E4;
+    padding: 10px;
+    background: #fff;
+    font: inherit;
+    resize: vertical;
+}
+.checkout-form .full-field {
+    grid-column: 1 / -1;
+}
+.checkout-error {
+    padding: 10px;
+    background: #FBE9E7;
+    color: #A33D32;
+    font-size: 13px;
+}
+.payment-guide {
+    display: grid;
+    gap: 6px;
+    padding: 13px;
+    border-left: 3px solid #1F6F9D;
+    border-radius: 5px;
+    background: #EDF6FC;
+    color: #234D6E;
+    font-size: 12px;
+    line-height: 1.55;
+}
+.qris-box {
+    display: none;
+    align-items: center;
+    gap: 12px;
+    padding: 10px;
+    border: 1px solid #C9DCEB;
+    border-radius: 10px;
+    background: #fff;
+}
+.qris-box img {
+    width: 180px;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+.qris-box div {
+    display: grid;
+    gap: 5px;
+    color: #234D6E;
+}
+.qris-box span {
+    font-size: 11px;
+    line-height: 1.45;
+}
+.checkout-form:has(select[name="payment_method"] option[value="QRIS"]:checked) .qris-box {
+    display: flex;
+}
+.stock-label {
+    display: block;
+    margin-top: 7px;
+    color: #1F6F9D;
+    font-size: 11px;
+    font-weight: 700;
+}
+.add-button:disabled {
+    border-color: #B6C4D0;
+    background: #E8EEF3;
+    color: #75889A;
+    cursor: not-allowed;
+}
+.admin-book > a {
+    margin-left: auto;
+    color: #1F6F9D;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.admin-book > a + form {
+    margin-left: 0;
+}
+.category-add {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 16px;
+}
+.category-add input, .category-list input {
+    padding: 9px;
+    border: 1px solid #C9D8E4;
+    font: inherit;
+}
+.category-add button, .category-list button {
+    border: 0;
+    padding: 9px 12px;
+    background: #1F6F9D;
+    color: #fff;
+    cursor: pointer;
+    font-size: 12px;
+}
+.category-list {
+    display: grid;
+    gap: 9px;
+}
+.category-list > div, .category-list form {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+.category-list .danger {
+    background: #A33D32;
+}
+.data-table {
+    overflow-x: auto;
+}
+.data-table table {
+    border-collapse: collapse;
+    width: 100%;
+    min-width: 540px;
+    font-size: 13px;
+}
+.data-table th, .data-table td {
+    padding: 11px 8px;
+    text-align: left;
+    border-top: 1px solid #D7E2EC;
+}
+.data-table th {
+    color: #61788D;
+    font-size: 11px;
+    text-transform: uppercase;
+}
+.data-table small {
+    display: block;
+    color: #61788D;
+    margin-top: 3px;
+}
+@media (max-width: 760px) {
+    .search-form {
+        display: none;
+    }
+}
+@media (max-width: 600px) {
+    .checkout-form {
+        grid-template-columns: 1fr;
+    }
+    .checkout-form .full-field {
+        grid-column: auto;
+    }
+}
+@media (max-width: 600px) {
+    .qris-box {
+        align-items: center;
+        flex-direction: row;
+    }
+    .qris-box img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+    }
+}
+.orders-page {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #F6FAFD, #E4F0F8);
+    color: #102A43;
+}
+.orders-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 8%;
+    background: #fff;
+    border-bottom: 1px solid #D7E2EC;
+}
+.orders-header > a:last-child {
+    color: #1F6F9D;
+    font-size: 13px;
+    font-weight: 700;
+    text-decoration: none;
+}
+.orders-main {
+    max-width: 900px;
+    margin: auto;
+    padding: 58px 24px;
+}
+.orders-main h1 {
+    margin-bottom: 28px;
+    font-size: 44px;
+}
+.order-card {
+    margin-bottom: 20px;
+    padding: 25px;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 10px 28px rgba(16,42,67,.08);
+}
+.order-head, .order-total {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.order-head span {
+    display: block;
+    font-weight: 700;
+}
+.order-head small {
+    display: block;
+    margin-top: 4px;
+    color: #61788D;
+}
+.status-badge {
+    padding: 6px 10px;
+    border-radius: 20px;
+    background: #E4F0F8;
+    color: #1F6F9D;
+    font-size: 11px;
+    text-transform: capitalize;
+}
+.order-detail {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 22px 0;
+    padding: 18px 0;
+    border-top: 1px solid #D7E2EC;
+    border-bottom: 1px solid #D7E2EC;
+}
+.order-detail p {
+    margin: 7px 0 0;
+    color: #61788D;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.order-items p {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+}
+.order-items span {
+    color: #61788D;
+}
+.order-total {
+    margin-top: 18px;
+}
+.order-total strong {
+    font: 600 23px 'Playfair Display';
+}
+.proof-link {
+    display: inline-block;
+    margin-top: 18px;
+    color: #1F6F9D;
+    font-size: 13px;
+    font-weight: 700;
+}
+@media (max-width: 600px) {
+    .order-detail {
+        grid-template-columns: 1fr;
+        gap: 14px;
+    }
+    .orders-main {
+        padding: 40px 16px;
+    }
+    .orders-main h1 {
+        font-size: 34px;
+    }
+}
+/* Tampilan checkout yang lebih modern */
+.cart-section {
+    background: linear-gradient(135deg, #F8FBFE 0%, #E7F1F8 100%);
+}
+.cart-list,
+.cart-total {
+    max-width: 760px;
+}
+.cart-item {
+    padding: 16px;
+    margin-bottom: 10px;
+    border: 1px solid #D7E2EC;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, .8);
+    box-shadow: 0 5px 14px rgba(16, 42, 67, .05);
+}
+.cart-item img {
+    border-radius: 7px;
+    box-shadow: 0 4px 10px rgba(16, 42, 67, .16);
+}
+.checkout-form {
+    position: relative;
+    padding: 28px;
+    border: 1px solid #C9DCEB;
+    border-radius: 14px;
+    background: #fff;
+    box-shadow: 0 12px 28px rgba(16, 42, 67, .09);
+}
+.checkout-form h3::before {
+    content: '01';
+    display: inline-grid;
+    place-items: center;
+    width: 26px;
+    height: 26px;
+    margin-right: 9px;
+    border-radius: 50%;
+    background: #1F6F9D;
+    color: #fff;
+    font: 700 10px 'DM Sans';
+    vertical-align: 2px;
+}
+.checkout-form input,
+.checkout-form textarea,
+.checkout-form select {
+    border-radius: 7px;
+    transition: border-color .2s, box-shadow .2s;
+}
+.checkout-form input:focus,
+.checkout-form textarea:focus,
+.checkout-form select:focus {
+    border-color: #1F6F9D;
+    box-shadow: 0 0 0 3px rgba(31, 111, 157, .14);
+    outline: none;
+}
+.cart-total .button {
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(16, 42, 67, .2);
+    transition: transform .2s, background .2s;
+}
+.cart-total .button:hover {
+    transform: translateY(-2px);
+    background: #1F6F9D;
+}
+/* Checkout dibuat selebar dan serapi section utama */
+.cart-section {
+    padding: 90px 8%;
+}
+.cart-section > .cart-list,
+.cart-section > .cart-total,
+.cart-section > .empty {
+    width: min(100%, 1080px);
+    margin-left: auto;
+    margin-right: auto;
+}
+.cart-section > .eyebrow,
+.cart-section > h2 {
+    width: min(100%, 1080px);
+    margin-left: auto;
+    margin-right: auto;
+}
+.cart-list {
+    margin-top: 32px;
+}
+.cart-total {
+    padding-top: 24px;
+}
+.checkout-form {
+    margin-top: 26px;
+    padding: 30px;
+}
+@media (max-width: 760px) {
+    .cart-section {
+        padding: 62px 6%;
+    }
+    .checkout-form {
+        padding: 20px;
+    }
+}
+.qris-thumbnail {
+    display: block;
+    line-height: 0;
+    cursor: zoom-in;
+}
+.qris-thumbnail img {
+    transition: transform .2s ease;
+}
+.qris-thumbnail:hover img {
+    transform: scale(1.06);
+}
+.qris-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    display: none;
+    place-items: center;
+    align-content: center;
+    gap: 12px;
+    padding: 24px;
+    background: rgba(8, 30, 48, .76);
+    color: #fff;
+}
+.qris-modal:target {
+    display: grid;
+}
+.qris-modal img {
+    width: min(82vw, 460px);
+    max-height: 78vh;
+    object-fit: contain;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 16px 45px rgba(0, 0, 0, .35);
+}
+.qris-modal p {
+    margin: 0;
+    font-size: 14px;
+}
+.qris-modal-close {
+    position: absolute;
+    top: 18px;
+    right: 22px;
+    color: #fff;
+    font-size: 32px;
+    text-decoration: none;
+    line-height: 1;
+}
+/* QRIS dapat dibuka di dalam checkout, tanpa pop-up halaman */
+.qris-expand {
+    width: 100%;
+}
+.qris-expand summary {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    cursor: pointer;
+    list-style: none;
+}
+.qris-expand summary::-webkit-details-marker {
+    display: none;
+}
+.qris-expand summary img {
+    width: 64px !important;
+    height: 64px !important;
+    object-fit: cover;
+    border-radius: 6px;
+}
+.qris-expand summary div {
+    display: grid;
+    gap: 5px;
+}
+.qris-expand[open] summary {
+    padding-bottom: 14px;
+    border-bottom: 1px solid #D7E2EC;
+}
+.qris-expand .qris-large {
+    display: block;
+    width: min(100%, 300px) !important;
+    height: auto !important;
+    margin: 16px auto 2px;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(16, 42, 67, .16);
+}
+/* Ukuran QRIS saat panel dibuka */
+details.qris-expand[open] > img.qris-large {
+    display: block !important;
+    width: min(320px, calc(100vw - 110px)) !important;
+    min-width: min(280px, calc(100vw - 110px));
+    height: auto !important;
+    max-height: none !important;
+    margin: 18px auto 4px !important;
+}

@@ -1,0 +1,29 @@
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: 35px !important;
+    flex-shrink: 0;
+}
+
+.account-link,
+.user-name {
+    color: #102A43;
+    font-size: 12px;
+    text-decoration: none;
+}
+
+.account-link {
+    font-weight: 700;
+}
+
+.register-link {
+    border-bottom: 1px solid #102A43;
+}
+
+@media (max-width: 760px) {
+    .user-name,
+    .register-link {
+        display: none;
+    }
+}
